@@ -1,0 +1,3 @@
+[build]
+  publish = "dist"
+  command = "mkdir -p dist && cp -r index.html app.html login.html manifest.json service-worker.js _headers assets dist/ && printf \"window.FITAPP_ENV = { SUPABASE_URL: '%s', SUPABASE_ANON_KEY: '%s' };\\n\" \"$SUPABASE_URL\" \"$SUPABASE_ANON_KEY\" > dist/assets/js/env.js"
