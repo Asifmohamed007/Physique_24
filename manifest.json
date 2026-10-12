@@ -1,0 +1,20 @@
+{
+  "name": "Physique 24 — 6-Month Tracker",
+  "short_name": "Physique 24",
+  "description": "Private workout, nutrition and progress tracker for a six-month physique plan.",
+  "start_url": "app.html#/dashboard",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#04060b",
+  "theme_color": "#04060b",
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "assets/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Today's workout", "url": "app.html#/workout" },
+    { "name": "Log food", "url": "app.html#/nutrition" }
+  ]
+}

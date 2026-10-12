@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Physique 24 — Asif's six-month training tracker</title>
+  <meta name="description" content="A private six-month training log: five gym sessions a week, every set, meal, measurement and progress photo saved to your own account.">
+  <meta name="theme-color" content="#04060b">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="assets/css/landing.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="landing">
+  <div class="progress-line" aria-hidden="true"></div>
+  <nav class="l-nav" aria-label="Main">
+    <a class="brand" href="#top"><span class="brand-mark">A</span><span><b>Physique 24</b><span>6-month tracker</span></span></a>
+    <a class="link hide-sm" href="#week">The week</a>
+    <a class="link hide-sm" href="#program">24 weeks</a>
+    <a class="link" href="login.html" data-auth-hide>Sign in</a>
+    <a class="btn btn-primary btn-sm" href="login.html#signup" data-cta>Create account</a>
+  </nav>
+
+  <main id="top">
+    <!-- HERO -->
+    <header class="hero">
+      <div class="plates" aria-hidden="true"><span class="p1" data-speed="0.18"></span><span class="p2" data-speed="-0.12"></span><span class="p3" data-speed="0.3"></span></div>
+      <div class="wrap">
+        <div class="week-word" id="week-word" aria-label="Training days Saturday to Wednesday, rest Thursday and Friday"></div>
+        <h1 class="rise">Six months. Five sessions a week. Every set on record.</h1>
+        <p class="today-line rise" style="--d:120ms" id="today-line">Training Saturday to Wednesday, 4:30–6:00 PM. Thursday and Friday are for recovery.</p>
+        <div class="row rise" style="--d:240ms">
+          <a class="btn btn-primary btn-lg" href="login.html#signup" data-cta>Start tracking</a>
+          <a class="btn btn-ghost btn-lg" href="#week">See the plan</a>
+        </div>
+      </div>
+      <div class="scroll-cue" aria-hidden="true">Scroll</div>
+    </header>
+
+    <!-- PINNED HORIZONTAL WEEK -->
+    <section id="week" class="scrub-week" data-scrub="week">
+      <div class="sticky">
+        <div class="wrap hz-head">
+          <p class="kicker">The week</p>
+          <h2 class="l-h2" style="font-size:clamp(2.2rem,5vw,3.8rem)">Push, pull, legs, upper, lower. Then two days off.</h2>
+        </div>
+        <div class="hz-track" id="hz-track"></div>
+        <div class="hz-dots" id="hz-dots" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- SET LOGGING DEMO -->
+    <section class="scrub-demo" data-scrub="demo" aria-labelledby="demo-h">
+      <div class="sticky">
+        <div class="wrap demo-grid">
+          <div class="demo-copy">
+            <p class="kicker">Between sets</p>
+            <h2 class="l-h2" id="demo-h">Type the weight. Type the reps. Tap done.</h2>
+            <p class="lede">Big inputs you can hit with a thumb, last session's numbers shown underneath, and a rest timer that starts on its own. Each set saves the moment you enter it — a dropped gym Wi-Fi signal just queues it.</p>
+          </div>
+          <div class="phone" aria-hidden="true">
+            <div class="ex-head"><div class="ex-thumb" id="demo-thumb"></div><div><h3 style="margin:0;font-size:1.3rem">Incline Dumbbell Press</h3><div class="ex-meta">Upper chest · 3 × 8–12</div></div></div>
+            <div class="ex-prev" style="margin:0 0 10px">Last time: 20 kg × 12, 12, 11</div>
+            <div class="set-head" style="grid-template-columns:30px 1fr 1fr 52px"><span>SET</span><span>KG</span><span>REPS</span><span>DONE</span></div>
+            <div id="demo-rows"></div>
+            <div class="demo-timer"><span class="num" id="demo-time">2:00</span><div class="bar cyan" style="flex:1"><span id="demo-bar" style="width:100%"></span></div></div>
+            <p class="demo-note">Example numbers for illustration only.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 24 WEEKS -->
+    <section id="program" class="scrub-weeks" data-scrub="weeks" aria-labelledby="weeks-h">
+      <div class="sticky">
+        <div class="wrap weeks-stage">
+          <h2 class="sr-only" id="weeks-h">The 24-week program</h2>
+          <div class="week-counter"><small>Program week</small><span id="wk-num">01</span></div>
+          <svg class="barbell" viewBox="0 0 900 140" aria-hidden="true">
+            <rect x="20" y="64" width="860" height="12" rx="6" fill="#3a4456"/>
+            <rect x="150" y="54" width="14" height="32" rx="4" fill="#5d6778"/><rect x="736" y="54" width="14" height="32" rx="4" fill="#5d6778"/>
+            <g id="plates-l"></g><g id="plates-r"></g>
+          </svg>
+          <p class="phase-name" id="ph-name">Foundation</p>
+          <p class="phase-focus" id="ph-focus">Learn form, build the routine, log workouts.</p>
+          <div class="tick-track" id="ticks" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROTEIN -->
+    <section class="scrub-protein" data-scrub="protein" aria-labelledby="pro-h">
+      <div class="sticky">
+        <div class="wrap protein-grid">
+          <div class="protein-copy">
+            <p class="kicker">Protein, spread across the day</p>
+            <h2 class="l-h2" id="pro-h">Breakfast is a start, not the whole target.</h2>
+            <p class="lede">Four eggs or 150 g of chicken in the morning covers a slice of the 140–160 g goal. The food log shows what's left and the quickest foods to close the gap. Whey stays optional.</p>
+          </div>
+          <div class="meter" aria-hidden="true"><div class="band"></div><div class="fill" id="meter-fill"></div><div class="read"><span id="meter-num">0</span><small>g protein</small></div></div>
+          <div class="foods" id="foods" aria-label="Example day of protein"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="l-section">
+      <div class="wrap">
+        <p class="kicker reveal">What it keeps track of</p>
+        <h2 class="l-h2 reveal" style="--d:80ms">Only numbers you logged. Nothing made up.</h2>
+        <div class="feat-grid">
+          <div class="feat reveal"><i data-lucide="trending-up" class="ico"></i><h3>Progressive overload</h3><p>When every set reaches the top of the rep range, it suggests a small jump. You accept, edit or ignore it — weights never change by themselves.</p></div>
+          <div class="feat reveal" style="--d:60ms"><i data-lucide="flame" class="ico"></i><h3>Streaks that respect rest</h3><p>Thursdays and Fridays never break a streak. Rescheduled sessions move instead of counting as missed.</p></div>
+          <div class="feat reveal" style="--d:120ms"><i data-lucide="beef" class="ico"></i><h3>Food around 4:30 PM</h3><p>Meal timing built around the gym slot, quick-add for eggs, chicken, dal and curd, and clearly labelled estimates.</p></div>
+          <div class="feat reveal"><i data-lucide="ruler" class="ico"></i><h3>Measurements & charts</h3><p>Weight, waist, chest, arms and thighs with trend lines, plus strength charts for every exercise.</p></div>
+          <div class="feat reveal" style="--d:60ms"><i data-lucide="lock" class="ico"></i><h3>Private photos</h3><p>Front, side and back photos in a private folder, with a before-and-after slider only you can open.</p></div>
+          <div class="feat reveal" style="--d:120ms"><i data-lucide="wifi-off" class="ico"></i><h3>Survives bad signal</h3><p>Sets queue on the phone when the connection drops and sync when it's back. "Saved" means the server confirmed it.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="ghost" aria-hidden="true">24 WEEKS</div>
+      <div class="wrap" style="position:relative">
+        <h2 class="l-h2 reveal">Show up. Log it. Repeat for 24 weeks.</h2>
+        <div class="row reveal" style="justify-content:center;--d:100ms"><a class="btn btn-primary btn-lg" href="login.html#signup" data-cta>Create your account</a><a class="btn btn-ghost btn-lg" href="login.html" data-auth-hide>Sign in</a></div>
+        <p class="disclaimer reveal">General training and nutrition guidance, not medical advice. Results depend on genetics, food, sleep and consistency — no specific change is guaranteed by any date. Stop and seek help for sharp pain, dizziness, chest pain or unusual breathlessness.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" id="foot">© <span id="yr"></span> Developed by Asif Mohamed | All Rights Reserved.</footer>
+  <script src="assets/vendor/lucide.min.js"></script>
+  <script type="module" src="assets/js/landing.js"></script>
+</body>
+</html>

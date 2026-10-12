@@ -1,0 +1,13 @@
+{
+  "name": "asif-physique-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Six-month physique tracker \u2014 static frontend + Supabase backend",
+  "scripts": {
+    "start": "npx --yes serve@14.2.4 . -l 5173",
+    "test": "node --test tests/logic.test.mjs",
+    "test:smoke": "npm i --no-save jsdom@24.1.0 && node tests/smoke/run.mjs && node tests/smoke/landing.mjs && node tests/smoke/boot.mjs",
+    "test:db": "bash tests/db/run.sh"
+  }
+}

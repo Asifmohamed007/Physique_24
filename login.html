@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sign in · Physique 24</title>
+  <meta name="theme-color" content="#04060b">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <style>
+    .auth-wrap { min-height: 100dvh; display: grid; grid-template-rows: 1fr auto; position: relative; overflow: hidden; }
+    .auth-bg { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: .1em; pointer-events: none;
+      font: 900 clamp(5rem, 18vw, 13rem)/.82 var(--font-display); color: transparent; -webkit-text-stroke: 1px rgba(143,154,171,.12); padding-left: 4vw; user-select: none; }
+    .auth-bg span:nth-child(3) { -webkit-text-stroke-color: rgba(198,244,50,.28); }
+    .auth-card { position: relative; width: min(440px, calc(100% - 28px)); margin: auto; padding: 28px; border-radius: 22px; background: rgba(18,22,30,.92); border: 1px solid var(--line); backdrop-filter: blur(8px); animation: page-in .5s var(--ease); }
+    .auth-card .brand { padding: 0 0 18px; }
+  </style>
+</head>
+<body>
+  <div class="auth-wrap">
+    <div class="auth-bg" aria-hidden="true"><span>SAT</span><span>SUN</span><span>MON</span><span>TUE</span><span>WED</span></div>
+    <main class="auth-card" id="auth">
+      <a class="brand" href="index.html"><span class="brand-mark">A</span><span><b>Physique 24</b><span>6-month tracker</span></span></a>
+      <div id="msg" class="notice" hidden role="alert" style="margin-bottom:14px"></div>
+      <div id="form-slot"><p class="muted">Loading…</p></div>
+    </main>
+    <div id="foot"></div>
+  </div>
+  <script src="assets/js/env.js"></script>
+  <script src="assets/vendor/supabase.js"></script>
+  <script type="module" src="assets/js/login.js"></script>
+</body>
+</html>

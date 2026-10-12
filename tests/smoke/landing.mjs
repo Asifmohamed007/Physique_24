@@ -1,0 +1,24 @@
+// Headless check of the landing page scroll engine and login page boot.
+import { JSDOM } from 'jsdom';
+import { readFileSync } from 'node:fs';
+const errs = [];
+const html = readFileSync('index.html', 'utf8').replace(/<script[^>]*src="[^"]*"[^>]*><\/script>/g, '');
+const dom = new JSDOM(html, { url: 'https://fit.test/index.html', pretendToBeVisual: true });
+const w = dom.window;
+w.matchMedia = () => ({ matches: false });
+w.IntersectionObserver = class { observe() {} unobserve() {} };
+for (const k of ['window', 'document', 'location', 'localStorage', 'navigator', 'requestAnimationFrame', 'IntersectionObserver']) Object.defineProperty(globalThis, k, { value: w[k], configurable: true, writable: true });
+w.addEventListener('error', (e) => errs.push(e.message));
+await import('../../assets/js/landing.js');
+const d = w.document;
+const ok = (n, c) => { console.log(`${c ? 'PASS' : 'FAIL'} ${n}`); if (!c) errs.push(n); };
+ok('7 weekday words rendered', d.querySelectorAll('.week-word .wd').length === 7);
+ok('Thu & Fri outlined as rest', d.querySelectorAll('.week-word .wd.rest').length === 2);
+ok("today's Qatar day highlighted", d.querySelectorAll('.week-word .wd.today').length === 1);
+ok('7 day panels in horizontal track', d.querySelectorAll('.day-panel').length === 7);
+ok('10 barbell plates', d.querySelectorAll('.plate').length === 10);
+ok('24 week ticks', d.querySelectorAll('#ticks i').length === 24);
+ok('5 protein foods', d.querySelectorAll('.food').length === 5);
+ok('footer year set', d.querySelector('#yr').textContent === String(new Date().getFullYear()));
+console.log(errs.length ? `ERRORS: ${errs.join('; ')}` : 'No errors.');
+process.exit(errs.length ? 1 : 0);
